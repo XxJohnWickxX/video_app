@@ -2,7 +2,30 @@
   "expo": {
     "name": "radar_app",
     "slug": "radar_app",
-    "version": "1.0.0"
-  },
-  "name": "radar_app"
+    "version": "1.0.0",
+    "plugins": [
+      [
+        "react-native-permissions",
+        {
+         
+          "iosPermissions": [
+            "Camera",
+            "Microphone"
+          ]
+        }
+      ]
+    ],
+    "ios": {
+      
+      "infoPlist": {
+        "NSPhotoLibraryAddUsageDescription": "La aplicación necesita acceso a tu galería para guardar imágenes.",
+        "NSPhotoLibraryUsageDescription": "La aplicación necesita acceso a tu galería para guardar imágenes."
+      }
+    },
+    "android": {
+      "permissions": [
+        "android.permission.WRITE_EXTERNAL_STORAGE"
+      ]
+    }
+  }
 }
